@@ -15,7 +15,6 @@ body {
     line-height: 1.4;
     background: #FFF;
     font-family: $body-font;
-    // font-weight: 400;
     h1, h2, h3 {
         font-family: $header-font;
         font-weight: 800;
@@ -44,6 +43,9 @@ body {
         font-weight: 100;
         text-align: center;
         margin-top: 32px;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size: 1.0em;
     }
 }
 .intro {
@@ -109,7 +111,9 @@ body {
         }
     }
     @media only screen and (max-width: 600px) {
-        padding: 20px;
+        padding: 30px;
+        width: auto;
+        margin-top: 0;
         .img-container {
             &#me, &#kim-and-dylan {
                 float: none;

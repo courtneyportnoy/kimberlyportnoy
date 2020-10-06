@@ -39,6 +39,11 @@ body .footer {
   text-align: center;
   margin-top: 32px;
 }
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1em;
+  }
+}
 
 .intro {
   max-width: 530px;
@@ -106,7 +111,9 @@ body .footer {
 }
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 20px;
+    padding: 30px;
+    width: auto;
+    margin-top: 0;
   }
   .container .img-container#me, .container .img-container#kim-and-dylan {
     float: none;
