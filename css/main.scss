@@ -15,11 +15,18 @@ body {
     line-height: 1.4;
     background: #FFF;
     font-family: $body-font;
+    // font-weight: 400;
     h1, h2, h3 {
         font-family: $header-font;
         font-weight: 800;
         letter-spacing: -0.2px;
         margin-bottom: 8px;
+    }
+    h4 {
+        font-family: $header-font;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-size: 0.8em;
     }
     p {
         margin-top: 0;
@@ -27,14 +34,14 @@ body {
     a {
         color: black;
         text-underline-position: under;
-        &:hover {
+        &:hover, &:active, &:focus, &:visited {
             color: $purple;
         }
     }  
     .footer {
         font-size: .8em;
         font-style: italic;
-        font-weight: light;
+        font-weight: 100;
         text-align: center;
         margin-top: 32px;
     }
@@ -87,6 +94,7 @@ body {
         &#me {
             float: right;
             margin-left: 20px;
+            transform: rotate(6deg);
         }
         &#kim-and-dylan {
             float: left;
@@ -99,9 +107,6 @@ body {
             text-align: center;
             margin: 10px 0 0;
         }
-    }
-    .fun-stuff {
-        clear: both;
     }
     @media only screen and (max-width: 600px) {
         padding: 20px;
@@ -122,6 +127,31 @@ body {
                 color: $purple;
             }
         }
-
+    }
+    .row {
+        display: flex;
+        clear: both;
+        .child {
+            padding-right: 16px;
+            ul {
+                padding-left: 0;
+                margin-top: 0;
+                &.fa-ul {
+                    margin-left: 1.8em;
+                }
+                li {
+                    font-size: 0.8em;
+                    b {
+                        color: $purple;
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            flex-flow: row wrap;
+            .child {
+                flex: 1 100%;
+            }
+        }
     }
 }
