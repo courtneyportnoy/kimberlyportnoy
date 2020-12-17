@@ -30,7 +30,7 @@ body a {
   text-underline-position: under;
 }
 body a:hover, body a:active, body a:focus, body a:visited {
-  color: #5522FA;
+  color: #380d75;
 }
 body .footer {
   font-size: 0.8em;
@@ -127,7 +127,7 @@ body .footer {
   margin-bottom: 10px;
 }
 .container ul li span {
-  color: #5522FA;
+  color: #380d75;
 }
 .container .row {
   display: flex;
@@ -147,7 +147,7 @@ body .footer {
   font-size: 0.8em;
 }
 .container .row .child ul li b {
-  color: #5522FA;
+  color: #380d75;
 }
 @media only screen and (max-width: 768px) {
   .container .row {
