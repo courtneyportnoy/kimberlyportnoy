@@ -1,5 +1,3 @@
-// $body-font: 'Aktiv Grotesk', sans-serif;
-// $header-font: 'Aktiv Grotesk', sans-serif;
 $blue: #0433FF;
 $content-width: 540px;
 
@@ -87,6 +85,16 @@ body {
     font-size: 25px;
     font-weight: 700;
     margin-top: 40px;
+    a {
+        box-shadow: none;
+        border-bottom: none;
+        &:hover, &:focus, {
+            color: $blue;
+            box-shadow: none;
+            border-bottom-color: none;
+            outline: 0;
+        }
+    }
 }
 .layout .main {
     display: flex;

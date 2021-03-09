@@ -82,6 +82,16 @@ body a:hover, body a:focus {
   font-weight: 700;
   margin-top: 40px;
 }
+.header a {
+  box-shadow: none;
+  border-bottom: none;
+}
+.header a:hover, .header a:focus {
+  color: #0433FF;
+  box-shadow: none;
+  border-bottom-color: none;
+  outline: 0;
+}
 
 .layout .main {
   display: flex;
