@@ -1,7 +1,22 @@
-$body-font: 'Aktiv Grotesk', sans-serif;
-$header-font: 'Aktiv Grotesk', sans-serif;
+// $body-font: 'Aktiv Grotesk', sans-serif;
+// $header-font: 'Aktiv Grotesk', sans-serif;
 $blue: #0433FF;
 $content-width: 540px;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family-serif: 'Noe Display', 'Times New Roman', Georgia, Times, serif;
+
+@font-face {
+    font-family: 'Noe Display';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local('Noe Display'), local('NoeDisplay-Regular'),
+        url('../fonts/noe-display-regular.woff2') format('woff2'),
+        url('../fonts/noe-display-regular.woff') format('woff');
+}
 
 .shadow {
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.24);
@@ -10,39 +25,56 @@ $content-width: 540px;
 }
 
 body {
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 1.375rem;
+    line-height: 1.6;
     background: #FFF;
-    font-family: $body-font;
-    color: #404040;
+    font-family: $font-family-sans-serif;
+    color: #373a3c;
 
-    h1, h2, h3 {
-        font-family: $header-font;
+    h1, h2 {
+        font-family: $font-family-serif;
         margin-bottom: 8px;
+        text-rendering: optimizeLegibility;
     }
     h1 {
-        font-weight: 500;
-        font-size: 100px;
-        text-align: center;
-        padding: 5rem 0;
+        font-size: 2.5rem;
         margin: 0;
+        line-height: 1;
+        @media (min-width: 670px) {
+            font-size: 5rem;
+            letter-spacing: -2px;
+            text-align: center;
+            padding: 4rem 0;
+        }
     }
-    h3 {
-        font-size: 32px;
+    h2 {
+        font-size: 2.25rem;
         font-weight: 700;
+        margin-top: 1.5em;
         margin-bottom: 12px;
+        @media (max-width: 670px) {
+            font-size: 2.0rem;
+        }
     }
     p {
         margin-top: 0;
-        line-height: 24px;
+        line-height: 1.6;
     }  
     a {
         color: $blue;
         text-decoration: none;
-        &:hover, &:active, &:focus, &:visited {
-            text-decoration: underline;
+        box-shadow: inset 0 -2px 0 0 currentColor;
+        border-bottom: 1px solid currentColor;
+        &:hover, &:focus, {
+            color: #fff;
+            box-shadow: inset 0 -1.25em 0 0 $blue;
+            border-bottom-color: $blue;
+            outline: 0;
         }
     }  
+    @media (max-width: 670px) {
+        font-size: 1rem;
+    }
 }
 .layout {
     display: flex;
@@ -67,9 +99,12 @@ body {
     margin: 0 auto;
 
     .body-content {
-        max-width: $content-width;
+        width: 100%;
         margin: 0 auto;
         padding-bottom: 4rem;
+        @media (min-width: 940px) {
+            max-width: $content-width;
+        }
     }
 
     .intro {
@@ -106,7 +141,7 @@ body {
                 margin: 0;
             }
             img {
-                object-position: 0 50%;
+                object-position: 0 -10%;
                 background-position: left center;
                 max-width: 100%;
                 height: auto;
@@ -124,10 +159,10 @@ body {
         }
     }
     ul {
-        list-style: none;
-        padding: 0;
+        list-style-position: outside;
+        padding-left: 1em;
         li {
-            margin-bottom: 10px;
+            margin-bottom: .25em;
         }
     }   
 }

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Noe Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Noe Display"), local("NoeDisplay-Regular"), url("../fonts/noe-display-regular.woff2") format("woff2"), url("../fonts/noe-display-regular.woff") format("woff");
+}
 .shadow {
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
   -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
@@ -5,38 +12,61 @@
 }
 
 body {
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 1.375rem;
+  line-height: 1.6;
   background: #FFF;
-  font-family: "Aktiv Grotesk", sans-serif;
-  color: #404040;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #373a3c;
 }
-body h1, body h2, body h3 {
-  font-family: "Aktiv Grotesk", sans-serif;
+body h1, body h2 {
+  font-family: "Noe Display", "Times New Roman", Georgia, Times, serif;
   margin-bottom: 8px;
+  text-rendering: optimizeLegibility;
 }
 body h1 {
-  font-weight: 500;
-  font-size: 100px;
-  text-align: center;
-  padding: 5rem 0;
+  font-size: 2.5rem;
   margin: 0;
+  line-height: 1;
 }
-body h3 {
-  font-size: 32px;
+@media (min-width: 670px) {
+  body h1 {
+    font-size: 5rem;
+    letter-spacing: -2px;
+    text-align: center;
+    padding: 4rem 0;
+  }
+}
+body h2 {
+  font-size: 2.25rem;
   font-weight: 700;
+  margin-top: 1.5em;
   margin-bottom: 12px;
+}
+@media (max-width: 670px) {
+  body h2 {
+    font-size: 2rem;
+  }
 }
 body p {
   margin-top: 0;
-  line-height: 24px;
+  line-height: 1.6;
 }
 body a {
   color: #0433FF;
   text-decoration: none;
+  box-shadow: inset 0 -2px 0 0 currentColor;
+  border-bottom: 1px solid currentColor;
 }
-body a:hover, body a:active, body a:focus, body a:visited {
-  text-decoration: underline;
+body a:hover, body a:focus {
+  color: #fff;
+  box-shadow: inset 0 -1.25em 0 0 #0433FF;
+  border-bottom-color: #0433FF;
+  outline: 0;
+}
+@media (max-width: 670px) {
+  body {
+    font-size: 1rem;
+  }
 }
 
 .layout {
@@ -65,9 +95,14 @@ body a:hover, body a:active, body a:focus, body a:visited {
   margin: 0 auto;
 }
 .container .body-content {
-  max-width: 540px;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 4rem;
+}
+@media (min-width: 940px) {
+  .container .body-content {
+    max-width: 540px;
+  }
 }
 .container .intro {
   margin-bottom: 2rem;
@@ -112,7 +147,7 @@ body a:hover, body a:active, body a:focus, body a:visited {
   }
 }
 .container .intro .img-container img {
-  object-position: 0 50%;
+  object-position: 0 -10%;
   background-position: left center;
   max-width: 100%;
   height: auto;
@@ -128,11 +163,11 @@ body a:hover, body a:active, body a:focus, body a:visited {
   object-fit: cover;
 }
 .container ul {
-  list-style: none;
-  padding: 0;
+  list-style-position: outside;
+  padding-left: 1em;
 }
 .container ul li {
-  margin-bottom: 10px;
+  margin-bottom: 0.25em;
 }
 
 footer.footer {
